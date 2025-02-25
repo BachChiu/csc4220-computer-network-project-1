@@ -1,15 +1,11 @@
 <?php
     if($_SERVER["REQUEST_METHOD"] == 'POST')
     {
-        $username = $_POST['username'];
-        $comment = $_POST['comment'];
-        $dbURL = getenv('POSTGRES_URL');
-        $parsed = parse_url($dbURL);
-        $host = $parsed['host'];
-        $port = $parsed['port'];
-        $database = ltrim($parsed['path'],'/');
-        $user = $parsed['user'];
-        $password = $parsed['pass'];
+        $user='postgres.hueirmaoxqqpgvtlllsh'; 
+        $password='LseK5spXsC5bDG1N'; 
+        $host='aws-0-us-east-1.pooler.supabase.com';
+        $port='5432';
+        $database='postgres';
         $dsn = "pgsql:host=$host;port=$port;dbname=$database;sslmode=require";
         try
         {
