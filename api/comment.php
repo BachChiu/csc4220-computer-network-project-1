@@ -50,7 +50,7 @@
 			a:visited {color: yellow; margin:auto;}
 			p {text-align:center; width:100%;}
             td{border: 1px solid black; padding:5 px;}
-            table{ width: 100%; display:block;}
+            table{ width: 100%; min-height:100%; display:block;}
         </style>
     </head>
     <body>
@@ -62,7 +62,7 @@
                         <input type="text" id="username" name="username"><br>
                         <label for="comment">Comments:</label><br>
                         <input type="text" id="comment" name="comment"><br>
-                        <button type="submit">
+                        <button type="submit">Submit</button>
                     </form>
                 </td>
                 <td>
