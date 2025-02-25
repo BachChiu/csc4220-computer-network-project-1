@@ -4,7 +4,7 @@
         $username = $_POST['username'];
         $comment = $_POST['comment'];
         $host = getenv('POSTGRES_HOST');
-        $port = '6543';
+        $port = 6543;
         $database = getenv('POSTGRES_DATABASE');
         $user= getenv('POSTGRES_USER');
         $pass=  getenv('POSTGRES_PASSWORD');
