@@ -8,6 +8,6 @@
     },
     "routes":
     [
-        {"src": "/(.*)", "dest": "/api/comment.php"}
+        {"src": "/comment", "dest": "/api/comment.php"}
     ]
 }
