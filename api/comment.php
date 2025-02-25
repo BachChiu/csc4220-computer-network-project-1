@@ -3,13 +3,14 @@
     {
         $username = $_POST['username'];
         $comment = $_POST['comment'];
-        $host = getenv('POSTGRES_HOST');
-        $port = 6543;
-        $database = getenv('POSTGRES_DATABASE');
-        $user= getenv('POSTGRES_USER');
-        $pass=  getenv('POSTGRES_PASSWORD');
-        $sslmode = 'sslmode=require'; 
-        $dsn = "pgsql:host=$host;port=$port;dbname=$database;$sslmode";
+        $dbURL = getenv('POSTGRES_URL');
+        $parsed = parse_url($dbURL);
+        $host = $parsed['host'];
+        $port = $parsed['port'];
+        $database = ltrim($parsed['path'],'/');
+        $user = $parsed['user'];
+        $password = $parsed['pass'];
+        $dsn = "pgsql:host=$host;port=$port;dbname=$database;sslmode=require";
         try
         {
             $pdo = new PDO($dsn, $user, $pass,
