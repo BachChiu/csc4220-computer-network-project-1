@@ -1,6 +1,4 @@
 <?php
-    ini_set('extension', 'pdo_pgsql');
-    ini_set('extension', 'pgsql');
     if($_SERVER["REQUEST_METHOD"] == 'POST')
     {
         $user='postgres.hueirmaoxqqpgvtlllsh'; 
@@ -97,3 +95,7 @@
             </tr>
         </table>
     </body>
+    <?php
+    phpinfo();
+    ?>
+</html>
