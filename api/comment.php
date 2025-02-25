@@ -4,10 +4,11 @@
         $username = $_POST['username'];
         $comment = $_POST['comment'];
         $host = getenv('POSTGRES_HOST');
+        $port = 6543;
         $database = getenv('POSTGRES_DATABASE');
         $user= getenv('POSTGRES_USER');
         $pass=  getenv('POSTGRES_PASSWORD');
-        $dsn = "pgsql:host={$host};dbname={$database};";
+        $dsn = "pgsql:host={$host};port={$port};dbname={$database};";
         try
         {
             $pdo = new PDO($dsn, $user, $pass,
@@ -49,6 +50,7 @@
 			a:visited {color: yellow; margin:auto;}
 			p {text-align:center; width:100%;}
             td{border: 1px solid black; padding:5 px;}
+            table{ width: 100%; display:block;}
         </style>
     </head>
     <body>
@@ -82,7 +84,7 @@
                         {
                             die("Database connection failed: " . $e->getMessage());
                         }
-                        $sql = "SELECT * FROM comments";
+                        $sql = "SELECT * FROM public.comments";
                         $statement = $pdo->prepare($sql);
                         $statement->execute();
                         $comments = $statement->fetchAll();
