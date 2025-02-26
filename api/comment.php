@@ -1,4 +1,4 @@
-<h2?php
+<?php
     if($_SERVER["REQUEST_METHOD"] == 'POST')
     {
         $userName = $_POST['username'];
