@@ -64,7 +64,7 @@
                     </form>
                 </td>
                 <td>
-                    <h1>Comment List:</h1>
+                    <h2>Comment List:</h2>
                     <br><br>
                     <?php
                         $host = getenv('userHost');
