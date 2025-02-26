@@ -33,6 +33,7 @@
             body {background-color:royalblue; display:block; margin-left:auto; margin-right:auto; width:100%;
 			color:white;}
 			h1 {text-align: center;}
+            h2{text-align:left; margin-top:0px; margin-left:0px;}
 			img {width:60%; display:block; margin-left:auto; margin-right:auto;}
 			a:visited {color: yellow; margin:auto;}
 			p {text-align:center; width:100%;}
@@ -76,7 +77,7 @@
                         $comments= $db->query($sql);
                         while($comment = $comments->fetch_assoc())
                         {
-                            echo "<li>User:" . $comment['userName'] . "<br>\t" . $comment['comment'] . "</li><br>";
+                            echo "<li>" . $comment['userName'] . "<br>\t" . $comment['comment'] . "</li><br>";
                         }
                     ?>
                 </td>
