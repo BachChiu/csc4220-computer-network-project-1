@@ -41,7 +41,7 @@
             div{width:100%; height:100%;}
             table{ min-width: 80%; min-height:80%; margin-left:auto; margin-right:auto;}
             tr{width:80%;}
-            td{height:100%; width:50%;}
+            td{height:100%; width:50%;vertical-align: top}
             #username{width:500px; height:50px;}
             #comment{width:500px; height:200px;}
         </style>
