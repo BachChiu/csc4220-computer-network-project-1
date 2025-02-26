@@ -36,8 +36,8 @@
 			img {width:60%; display:block; margin-left:auto; margin-right:auto;}
 			a:visited {color: yellow; margin:auto;}
 			p {text-align:center; width:100%;}
-            td{border: 1px solid black; padding:5 px;}
-            table{ width: 100%; min-height:500px; min-width:500px; display:block;}
+            td{border: 1px solid black; padding:5px;}
+            table{ width: 100%; height:100%; display:block;}
         </style>
     </head>
     <body>
@@ -46,6 +46,7 @@
             <br><br>
             <a style="color:yellow;" href="./index.html">Back to main page</a>
 		</p>
+        <div>
         <table>
             <tr>
                 <td>
@@ -74,5 +75,6 @@
                 </td>
             </tr>
         </table>
+        </div>
     </body>
 </html>
