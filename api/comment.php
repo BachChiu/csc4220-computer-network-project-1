@@ -33,7 +33,7 @@
             body {background-color:royalblue; display:block; margin-left:auto; margin-right:auto; width:100%;
 			color:white;}
 			h1 {text-align: center;}
-            h2{text-align:start; margin-top:0px; margin-left:0px;}
+            #commentHeader{font-size:40px;}
 			img {width:60%; display:block; margin-left:auto; margin-right:auto;}
 			a:visited {color: yellow; margin:auto;}
 			p {text-align:center; width:100%;}
@@ -65,7 +65,7 @@
                     </form>
                 </td>
                 <td>
-                    <h2>Comment List:</h2>
+                    <li id="commentHeader">Comment List</li>
                     <br><br>
                     <?php
                         $host = getenv('userHost');
