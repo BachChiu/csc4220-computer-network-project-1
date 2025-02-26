@@ -1,4 +1,4 @@
-<?php
+<h2?php
     if($_SERVER["REQUEST_METHOD"] == 'POST')
     {
         $userName = $_POST['username'];
@@ -65,7 +65,7 @@
                     </form>
                 </td>
                 <td>
-                    <li id="commentHeader">Comment List</li>
+                    <h2 id="commentHeader">Comment List</h2>
                     <br><br>
                     <?php
                         $host = getenv('userHost');
