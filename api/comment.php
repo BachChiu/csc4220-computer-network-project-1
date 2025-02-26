@@ -36,9 +36,9 @@
 			img {width:60%; display:block; margin-left:auto; margin-right:auto;}
 			a:visited {color: yellow; margin:auto;}
 			p {text-align:center; width:100%;}
-            td{border: 1px solid black; padding:5px;}
+            td{border: 5px solid black; padding:5px;}
             div{width:100%; height:100%;}
-            table{ min-width: 80%; min-height:80%;}
+            table{ min-width: 80%; min-height:80%; display:block; margin-left:auto; margin-right:auto;}
             tr{width:80%;}
             td{height:100%; width:50%;}
             #username{width:200px; height:50px;}
