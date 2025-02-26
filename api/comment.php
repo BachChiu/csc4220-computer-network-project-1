@@ -38,10 +38,11 @@
 			p {text-align:center; width:100%;}
             td{border: 1px solid black; padding:5px;}
             div{width:100%; height:100%;}
-            table{ min-width: 100%; min-height:100%;}
-            tr{width:100%;}
+            table{ min-width: 80%; min-height:80%;}
+            tr{width:80%;}
             td{height:100%; width:50%;}
-            input{width:500px; height:500px;}
+            #username{width:200px; height:50px;}
+            #comment{width:200px; height:200px;}
         </style>
     </head>
     <body>
@@ -63,6 +64,8 @@
                     </form>
                 </td>
                 <td>
+                    <h1>Comment List:</h1>
+                    <br><br>
                     <?php
                         $host = getenv('userHost');
                         $sqlname = getenv('sqlName');
