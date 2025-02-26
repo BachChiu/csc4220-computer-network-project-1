@@ -1,30 +1,18 @@
 <?php
-    phpinfo();
     if($_SERVER["REQUEST_METHOD"] == 'POST')
     {
-        $user='postgres.hueirmaoxqqpgvtlllsh'; 
-        $password='LseK5spXsC5bDG1N'; 
-        $host='aws-0-us-east-1.pooler.supabase.com';
-        $port='5432';
-        $database='postgres';
-        $dsn = "pgsql:host=$host;port=$port;dbname=$database;sslmode=require";
-        try
-        {
-            $pdo = new PDO($dsn, $user, $password,
-            [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-            ]);
-        }
-        catch (PDOException $e)
-        {
-            die("Database connection failed: " . $e->getMessage());
-        }
-        $sql = "INSERT INTO comments(userName, comment) VALUES (:userName, :comment)";
-        $statement = $pdo->prepare($sql);
-        $statement->bindParam(':userName', $username);
-        $statement->bindParam(":comment", $comment);
+        $userName = $_POST['username'];
+        $comment = $_POST['comment'];
+        $host = getenv('userHost');
+        $sqlname = getenv('sqlName');
+        $password = getenv('sqlPass');
+        $database = "csc4220_cn_project";
+        $db= new mysqli($host, $sqlname, $password, $database);
+        $sql ="INSERT INTO comments (userName, comment) VALUES (?,?)";
+        $statement = $db->prepare($sql);
+        $statement->bind_param("ss", $userName, $comment);
         $statement->execute();
+        $db->close();
     }
 ?>
 <html>
@@ -66,28 +54,14 @@
                 </td>
                 <td>
                     <?php
-                        $host = getenv('POSTGRES_HOST');
-                        $database = getenv('POSTGRES_DATABASE');
-                        $user= getenv('POSTGRES_USER');
-                        $pass=  getenv('POSTGRES_PASSWORD');
-                        $dsn = "pgsql:host={$host};dbname={$database};";
-                        try
-                        {
-                            $pdo = new PDO($dsn, $user, $pass,
-                            [
-                            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
-                            ]);
-                        }
-                        catch (PDOException $e)
-                        {
-                            die("Database connection failed: " . $e->getMessage());
-                        }
-                        $sql = "SELECT * FROM public.comments";
-                        $statement = $pdo->prepare($sql);
-                        $statement->execute();
-                        $comments = $statement->fetchAll();
-                        foreach($comments as $comment)
+                        $host = getenv('userHost');
+                        $sqlname = getenv('sqlName');
+                        $password = getenv('sqlPass');
+                        $database = "csc4220_cn_project";
+                        $db= new mysqli($host, $sqlname, $password, $database);
+                        $sql ="SELECT userName, comment from comments";
+                        $comments= $db->query($sql);
+                        while($comment = $comments->fetch_assoc())
                         {
                             echo "<li>User:" . $comment['userName'] . "<br>\t" . $comment['comment'] . "</li><br>";
                         }
