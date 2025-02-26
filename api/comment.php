@@ -37,10 +37,15 @@
 			a:visited {color: yellow; margin:auto;}
 			p {text-align:center; width:100%;}
             td{border: 1px solid black; padding:5 px;}
-            table{ width: 100%; min-height:100%; display:block;}
+            table{ width: 100%; min-height:500px; min-width:500px; display:block;}
         </style>
     </head>
     <body>
+        <p style="font-family: Arial">
+            <a style="color:yellow; " href="https://docs.google.com/document/d/1o90Jns_h1BZpeGGXSSQIqtbhgEW3HwPUMOoVRHx8ch4/edit?usp=sharing">Computer Network Project Report</a>
+            <br><br>
+            <a style="color:yellow;" href="./index.html">Back to main page</a>
+		</p>
         <table>
             <tr>
                 <td>
