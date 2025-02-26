@@ -39,6 +39,9 @@
             td{border: 1px solid black; padding:5px;}
             div{width:100%; height:100%;}
             table{ min-width: 100%; min-height:100%;}
+            tr{width:100%;}
+            td{height:100%; width:50%;}
+            input{width:500px; height:500px;}
         </style>
     </head>
     <body>
