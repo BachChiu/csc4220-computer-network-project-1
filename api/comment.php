@@ -1,18 +1,35 @@
 <?php
     if($_SERVER["REQUEST_METHOD"] == 'POST')
     {
-        $userName = $_POST['username'];
-        $comment = $_POST['comment'];
-        $host = getenv('userHost');
-        $sqlname = getenv('sqlName');
-        $password = getenv('sqlPass');
-        $database = getenv('sqlDatabase');
-        $db= new mysqli($host, $sqlname, $password, $database);
-        $sql ="INSERT INTO comments (userName, comment) VALUES (?,?)";
-        $statement = $db->prepare($sql);
-        $statement->bind_param("ss", $userName, $comment);
-        $statement->execute();
-        $db->close();
+        try{
+            $userName = $_POST['username'];
+            $comment = $_POST['comment'];
+            $host = getenv('userHost');
+            $sqlname = getenv('sqlName');
+            $password = getenv('sqlPass');
+            $database = getenv('sqlDatabase');
+            $db= new mysqli($host, $sqlname, $password, $database);
+            $sql ="INSERT INTO comments (userName, comment) VALUES (?,?)";
+            $statement = $db->prepare($sql);
+            $statement->bind_param("ss", $userName, $comment);
+            $statement->execute();
+            $db->close();
+        }
+        catch(Exception $e)
+        {
+            $userName = $_POST['username'];
+            $comment = $_POST['comment'];
+            $host = getenv('userHostBackup');
+            $sqlname = getenv('sqlNameBackup');
+            $password = getenv('sqlPassBackup');
+            $database = getenv('sqlDatabaseBackup');
+            $db= new mysqli($host, $sqlname, $password, $database);
+            $sql ="INSERT INTO comments (userName, comment) VALUES (?,?)";
+            $statement = $db->prepare($sql);
+            $statement->bind_param("ss", $userName, $comment);
+            $statement->execute();
+            $db->close();
+        }
     }
 ?>
 <html>
