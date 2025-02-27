@@ -6,7 +6,7 @@
         $host = getenv('userHost');
         $sqlname = getenv('sqlName');
         $password = getenv('sqlPass');
-        $database = "csc4220_cn_project";
+        $database = getenv('sqlDatabase');
         $db= new mysqli($host, $sqlname, $password, $database);
         $sql ="INSERT INTO comments (userName, comment) VALUES (?,?)";
         $statement = $db->prepare($sql);
