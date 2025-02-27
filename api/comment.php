@@ -71,7 +71,7 @@
                         $host = getenv('userHost');
                         $sqlname = getenv('sqlName');
                         $password = getenv('sqlPass');
-                        $database = "csc4220_cn_project";
+                        $database = getenv('sqlDatabase');
                         $db= new mysqli($host, $sqlname, $password, $database);
                         $sql ="SELECT userName, comment from comments";
                         $comments= $db->query($sql);
