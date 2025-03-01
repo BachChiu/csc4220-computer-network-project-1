@@ -25,7 +25,7 @@
                     align-items: flex-end;
                 }
 		.g-recaptcha {
-			transform: scale(0.77P;
+			transform: scale(0.77);
 			transform-origin: 0 0;
 		}
 		.submit-button {
@@ -86,13 +86,12 @@
         }
     </script>
     <form id="demo-form" action="your_form_action_url" method="post">
-        
 	<div class="recaptcha-container">
+	<div class="g-recaptcha" data-sitekey="6Ld1Rd0qAAAAAIHevIPXL-5ZGODuUNGgOawpFlFn"></div>	
         <button class="g-recaptcha"
                 data-sitekey="6Ld1Rd0qAAAAAIHevIPXL-5ZGODuUNGgOawpFlFn" 
                 data-callback='onSubmit' 
-                data-action='submit'>Submit</button>
-		<div class="g-recaptcha" data-sitekey="6Ld1Rd0qAAAAAIHevIPXL-5ZGODuUNGgOawpFlFn"></div>	
+                data-action='submit'>Submit</button>		
 	</div>
     </form>
     <script src="https://www.google.com/recaptcha/api.js?render=6Ld1Rd0qAAAAAIHevIPXL-5ZGODuUNGgOawpFlFn"></script>    
