@@ -80,10 +80,13 @@
     </script>
     <form id="demo-form" action="your_form_action_url" method="post">
         <!-- Your form fields go here -->
+	<div class="recaptcha-container">
         <button class="g-recaptcha" 
                 data-sitekey="6Ld1Rd0qAAAAAIHevIPXL-5ZGODuUNGgOawpFlFn" 
                 data-callback='onSubmit' 
                 data-action='submit'>Submit</button>
+	<div class="g-recaptcha" data-sitekey="6Ld1Rd0qAAAAAIHevIPXL-5ZGODuUNGgOawpFlFn"></div>	
+	</div>
     </form>
     <script src="https://www.google.com/recaptcha/api.js?render=6Ld1Rd0qAAAAAIHevIPXL-5ZGODuUNGgOawpFlFn"></script>    
 </body>
