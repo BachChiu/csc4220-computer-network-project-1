@@ -65,111 +65,13 @@
                 </ul>
             </li>
         </ul>
-	    <!DOCTYPE html>
-<html>
-<head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S304PTWPM6"></script>
-    <script>
-        function onSubmit(token) {
-            document.getElementById("demo-form").submit();
-        }
-    </script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Computer Network Project</title>
-    <style>
-        body {
-            background-color: royalblue;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 100%;
-            color: white;
-        }
-        h1 {
-            text-align: center;
-        }
-        img {
-            width: 60%;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        a:visited {
-            color: yellow;
-            margin: auto;
-        }
-        p {
-            text-align: center;
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
-    <div class="banner">
-        <img src="computer-technology-and-data-center-web-header.jpg" alt="Computer Networks">
-    </div>
-    <h1>Welcome to the Computer Network Project</h1>
-    <p style="font-family: Arial">
-        <a style="color: yellow;" href="https://docs.google.com/document/d/1o90Jns_h1BZpeGGXSSQIqtbhgEW3HwPUMOoVRHx8ch4/edit?usp=sharing">Computer Network Project Report</a>
-        <br><br>
-        <a style="color: yellow;" href="./api/comment.php">Leave a comment here (This is where database is done)</a>
-    </p>
-    <ul>
-        <li>Project Task:
-            <ul>
-                <li>How the site accesses its networking capabilities:
-                    <ul>
-                        <li>Vercel's edge network lets the user store content close to their customers and compute in the region close to their data by reducing latency and improving end-user performance.</li>
-                    </ul>
-                </li>
-                <li>How the hosting service works:
-                    <ul>
-                        <li>Vercel is a cloud platform that helps developers build and deploy web projects. It offers a global CDN, and automatically gives the site an HTTPS interface. It also uses smart routing to direct requests to the closest data center, which can help speed up website loading.</li>
-                    </ul>
-                </li>
-                <li>Describe how the site and host connect:
-                    <ul>
-                        <li>They connect to their host by integrating users with a user's Git repository (GitHub), where the website code is stored. When changes are pushed to the repository, Vercel automatically builds and deploys the site to its server network, making the website accessible through a unique URL.</li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-        <li>Contributors
-            <ul>
-                <li>Bach Chiu
-                    <ul>
-                        <li>Report</li>
-                        <li>Website Design</li>
-                        <li>Database</li>
-                    </ul>
-                </li>
-                <li>Liz Nunez
-                    <ul>
-                        <li>Report</li>
-                    </ul>
-                </li>
-                <li>J. Colin Ballentine
-                    <ul>
-                        <li>Report</li>
-                        <li>Website Design</li>
-                        <li>reCAPTCHA</li>
-                        <li>Google Analytics</li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-    </ul>	 
-</body>
-</html>
-	    <!-- Feedback form with reCAPTHCA -->
- <form id="demo-form" action="your-server-endpoint" method="POST">
+	     <!-- Feedback Form with reCAPTCHA -->
+    <form id="demo-form" action="your-server-endpoint" method="POST">
         <label for="feedback">Your Feedback:</label><br>
         <textarea id="feedback" name="feedback" rows="4" required></textarea><br>
         <div class="g-recaptcha" data-sitekey="6Ld1Rd0qAAAAAIHevIPXL-5ZGODuUNGgOawpFlFn"></div>
         <br>
         <button type="submit" onclick="onSubmit()">Submit</button>
-    </form>        
+    </form>
     </body>
 </html>
