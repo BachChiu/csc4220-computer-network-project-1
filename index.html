@@ -14,15 +14,22 @@
 			a:visited {color: yellow; margin:auto;}
 			p {text-align:center; width:100%;}
 		
-		/* Ensure the reCAPTCHA badge is positioned correctly*/
-		<div class="g-recaptcha" data-sitekey="6Ld1Rd0qAAAAAIHevIPXL-5ZGODuUNGgOawpFlFn"></div>
+		/* Ensure the reCAPTCHA badge and submit button is positioned correctly*/
+		.recaptcha-container {
+            	    position: fixed;
+                    bottom: 20px;
+                    right: 20px;
+                    z-index: 100;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                }
 		.g-recaptcha {
 			transform: scale(0.77P;
 			transform-origin: 0 0;
-			position: fixed;
-			bottom: 20px; 
-			right: 20px;
-			z-index: 100;
+		}
+		.submit-button {
+			margin-top: 10px;
 		}
         </style>
     </head>
@@ -79,13 +86,13 @@
         }
     </script>
     <form id="demo-form" action="your_form_action_url" method="post">
-        <!-- Your form fields go here -->
+        
 	<div class="recaptcha-container">
-        <button class="g-recaptcha" 
+        <button class="g-recaptcha"
                 data-sitekey="6Ld1Rd0qAAAAAIHevIPXL-5ZGODuUNGgOawpFlFn" 
                 data-callback='onSubmit' 
                 data-action='submit'>Submit</button>
-	<div class="g-recaptcha" data-sitekey="6Ld1Rd0qAAAAAIHevIPXL-5ZGODuUNGgOawpFlFn"></div>	
+		<div class="g-recaptcha" data-sitekey="6Ld1Rd0qAAAAAIHevIPXL-5ZGODuUNGgOawpFlFn"></div>	
 	</div>
     </form>
     <script src="https://www.google.com/recaptcha/api.js?render=6Ld1Rd0qAAAAAIHevIPXL-5ZGODuUNGgOawpFlFn"></script>    
