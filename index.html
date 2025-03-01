@@ -78,22 +78,44 @@
                 </ul>
             </li>
         </ul>
-<!-- reCAPTCHA Integration -->
+	    <!-- reCAPTCHA Integration -->
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
         function onSubmit(token) {
             document.getElementById("demo-form").submit();
         }
-    </script>
-    <form id="demo-form" action="your_form_action_url" method="post">
-	<div class="recaptcha-container">
-	<div class="g-recaptcha" data-sitekey="6Ld1Rd0qAAAAAIHevIPXL-5ZGODuUNGgOawpFlFn"></div>	
-        <button class="g-recaptcha"
-                data-sitekey="6Ld1Rd0qAAAAAIHevIPXL-5ZGODuUNGgOawpFlFn" 
-                data-callback='onSubmit' 
-                data-action='submit'>Submit</button>		
-	</div>
-    </form>
-    <script src="https://www.google.com/recaptcha/api.js?render=6Ld1Rd0qAAAAAIHevIPXL-5ZGODuUNGgOawpFlFn"></script>    
+
+        function executeRecaptcha() {
+            grecaptcha.ready(function() {
+                grecaptcha.execute('6Ld1Rd0qAAAAAIHevIPXL-5ZGODuUNGgOawpFlFn', {action: 'submit'}).then(function(token) {
+                    // Create the JSON object
+                    const event = {
+                        token: token,
+                        expectedAction: 'submit',
+                        siteKey: '6Ld1Rd0qAAAAAIHevIPXL-5ZGODuUNGgOawpFlFn'
+                    };
+
+                    // Send the JSON object to the API endpoint
+                    fetch('https://recaptchaenterprise.googleapis.com/v1/projects/arched-iterator-451514-i9/assessments?key=API_KEY', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({event: event})
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Success:', data);
+                        // Add the token to the form and submit
+                        document.getElementById('g-recaptcha-response').value = token;
+                        document.getElementById('demo-form').submit();
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
+                });
+            });
+        }
+    
 </body>
 </html>
